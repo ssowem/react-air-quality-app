@@ -1,0 +1,77 @@
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh; /* 뷰포트 전체 높이 */
+  max-width: 720px; /* 최대 너비 */
+  margin: 0 auto; /* 중앙 정렬 */
+}
+/* .top-bar, .bottom-bar {
+  position: fixed;
+  left: 50%; 
+  transform: translateX(-50%); 
+  max-width: 720px;
+  width: 100%;
+  z-index: 100;
+} */
+
+.top-bar {
+  width: 100%;
+  background-color: #313131;
+  border-radius: 10px;
+}
+
+/* .top-bar {
+  top: 30px;
+  background-color: #313131;
+  height: 126px;
+  border-radius: 10px;
+} */
+
+
+.color-bar {
+  height: 50px;
+  width: 100%; 
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* .color-bar {
+  position: fixed;
+  top: 156px;
+  right: 0; 
+  max-width: 720px; 
+  width: 100%; 
+  z-index: 100;
+} */
+
+
+.bottom-bar {
+  height: 72px; /* 하단 바 높이 */
+  width: 100%;
+  /* 기타 스타일링 */
+}
+
+/* .bottom-bar {
+  bottom: 30px;
+  height: 72px;
+}
+ */
+
+
+.main-content {
+  flex-grow: 1; /* 남은 공간을 채움 */
+  width: 100%; /* 부모 컨테이너(최대 720px)의 너비를 채움 */
+  overflow-y: auto; /* 필요한 경우 스크롤 */
+}
+
+/* .main-content {
+  padding-top: 156px;
+  padding-bottom: 102px;
+  overflow-y: auto;
+  height: calc(100vh - 258px); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
