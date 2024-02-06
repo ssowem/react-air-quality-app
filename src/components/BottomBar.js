@@ -44,13 +44,14 @@ const Button = styled.button`
   font-size: 16px;
   cursor: pointer;
   width: 100%;
-  height: 72px;
+  height: 62px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 5px;
-  border-radius: 20px;
+  border-radius: 10px;
   border: 1px solid #000;
+  box-shadow: 2px 4px 5px 2px rgba(155,155,155,0.5);
   background-color: ${props => props.$active ? '#313131' : '#fff'};
   color: ${props => props.$active ? '#fff' : '#000'};
 `

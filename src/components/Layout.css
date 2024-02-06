@@ -48,16 +48,10 @@
 
 
 .bottom-bar {
-  height: 72px; /* 하단 바 높이 */
   width: 100%;
-  /* 기타 스타일링 */
+
 }
 
-/* .bottom-bar {
-  bottom: 30px;
-  height: 72px;
-}
- */
 
 
 .main-content {

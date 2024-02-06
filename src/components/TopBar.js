@@ -49,7 +49,7 @@ const TopBar = () => {
 
 export default TopBar;
 const TopBarContainer = styled.div`
-  padding: 30px;
+  padding: 38px;
   ${props => props.$isSelected ? `
     color: #fff;
     position: relative;
@@ -60,7 +60,6 @@ const TopBarContainer = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100%;
     color: #fff;
     // 기본 스타일 세트
   `}

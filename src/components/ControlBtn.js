@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 
-const ControlBtn = ({onCancel, onConfirm}) => {
+const ControlBtn = ({ onCancel, onConfirm }) => {
   return (
     <ControlBtnContainer>
       <Button onClick={onCancel}>취소</Button>

@@ -22,15 +22,6 @@ const Layout = ({ children }) => {
         <BottomBar />
       </div>
     </div>
-
-    // <div className="layout-container">
-    //   <TopBar />
-    //   <ColorInfoBar />
-    //   <main className="main-content">
-    //     {children}
-    //   </main>
-    //   <BottomBar />
-    // </div>
   );
 };
 

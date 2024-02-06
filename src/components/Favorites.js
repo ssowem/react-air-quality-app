@@ -1,62 +1,106 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components';
+import ClearAllModal from './ClearAllModal';
 
 const Favorites = ({ favorites, clearFavorites, toggleFavorite }) => {
+  const [isClearAllVisible, setIsClearAllVisible] = useState(false);
+
+
+  const toggleRegionSelect = () => {
+    // true이면 false로, false이면 true로 변경시킴
+    setIsClearAllVisible(!isClearAllVisible);
+  };
+
+  const closeClearAllModal = () => {
+    setIsClearAllVisible(false);
+  };
+
+  const handleClearFavorites = () => {
+    // clearFavorites 실행 후 모달을 닫는다.
+    clearFavorites();
+    closeClearAllModal(); // 모달 닫기
+  };
+
+
+
   return (
-    <FavoritesContainer>
-      <Button onClick={clearFavorites}>
-        <span class="material-icons-outlined">
-          refresh
-        </span>
-        전체초기화
-      </Button>
+    <>
+      {favorites.length === 0 ? (
+        <DefaultViewContainer>
+          <p>즐겨찾기에 등록된 지역이 없습니다.</p>
+        </DefaultViewContainer>
+      ) : (
+        <FavoritesContainer>
+          <Button onClick={toggleRegionSelect} disabled={favorites.length === 0}>
+            <span className="material-icons-outlined">
+              refresh
+            </span>
+            전체초기화
+          </Button>
 
-      {favorites.map((favorite, index) => (
-        <RegionInfoWrap>
-          <RegionInfoItem key={index}>
-            <div className="Region">
-              <div className="left">
-                <div className="row">
-                  <span>{favorite}</span>
-                  <span>노원구</span>
+          <RegionInfoList>
+            {favorites.map((favorite, index) => (
+              <RegionInfoItem key={index}>
+                <div className="Region">
+                  <div className="left">
+                    <div className="row">
+                      <span>{favorite}</span>
+                      <span>노원구</span>
+                    </div>
+                    <div className="row">
+                      <span>좋음</span>
+                      <span>좋음2</span>
+                    </div>
+                  </div>
+                  <div className="right">
+                    <span className="material-icons-outlined" onClick={() => toggleFavorite(favorite)}>turned_in</span>
+                  </div>
                 </div>
-                <div className="row">
-                  <span>좋음</span>
-                  <span>좋음2</span>
+
+                <div className='detail'>
+                  <div className='row'>
+                    <span>미세먼지</span>
+                    <span>25</span>
+                  </div>
+
+                  <div className='row'>
+                    <span>오존지수</span>
+                    <span>25</span>
+                  </div>
+
+                  <div className='row'>
+                    <span>통합대기환경수치</span>
+                    <span>25</span>
+                  </div>
                 </div>
-              </div>
-              <div className="right">
-                <span className="material-icons-outlined" onClick={() => toggleFavorite(favorite)}>turned_in</span>
-              </div>
-            </div>
+              </RegionInfoItem>
+            ))}
+          </RegionInfoList>
+          {isClearAllVisible && (
+            <ClearAllModal
+              onClose={closeClearAllModal} // Pass function to close the modal
+              clearFavorites={handleClearFavorites} // Pass the clearFavorites function
+            />
+          )}
+        </FavoritesContainer>
+      )}
+    </>
+  );
+};
 
-            <div className='detail'>
-              <div className='row'>
-                <span>미세먼지</span>
-                <span>25</span>
-              </div>
-
-              <div className='row'>
-                <span>오존지수</span>
-                <span>25</span>
-              </div>
-
-              <div className='row'>
-                <span>통합대기환경수치</span>
-                <span>25</span>
-              </div>
-            </div>
-          </RegionInfoItem>
-        </RegionInfoWrap>
-      ))}
-    </FavoritesContainer>
-  )
-}
 
 export default Favorites;
 const FavoritesContainer = styled.div`
   display: flex;
   flex-direction: column;
+`
+
+const DefaultViewContainer = styled.div`
+  height: 300px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d0d0d0;
 `
 
 const Button = styled.button`
@@ -82,11 +126,17 @@ const Button = styled.button`
     color: #000;
     border: 1px solid #000;
   }
+
+  &:disabled {
+    background-color: #eee;
+    color: #a2a2a2;
+    cursor: auto;
+    border: none;
+  }
 `
-const RegionInfoWrap = styled.div`
+const RegionInfoList = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  width: 100%;
   gap: 10px;
 `
 

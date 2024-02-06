@@ -67,6 +67,7 @@ const RegionFinder = ({ toggleFavorite, favorites }) => {
                 </div>
               </div>
             </RegionInfoItem>
+            
           </RegionInfoWrap>
         </SelectedViewContainer>
       )}

@@ -12,7 +12,7 @@ export default TopBarBtn;
 const Button = styled.button`
   cursor: pointer;
   font-size: 14px;
-  padding: 5px 18px;
+  padding: 8px 18px;
   margin-top: ${props => props.$isSelected ? '0px': '10px'};
   border-radius: 5px;
   border: none;

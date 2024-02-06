@@ -11,7 +11,7 @@ const MyRegionSelect = ({ onClose, onRegionSelected }) => {
   };
 
   const handleConfirm = () => {
-    onRegionSelected(selectedRegion); // 선택된 지역 정보를 상위 컴포넌트로 전달
+    onRegionSelected(selectedRegion); //선택된 지역 정보를 상위 컴포넌트로 전달
     onClose();
   };
 
