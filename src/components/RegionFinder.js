@@ -28,7 +28,7 @@ const RegionFinder = ({ toggleFavorite, favorites }) => {
       )}
 
       {currentRegion && (
-        <SelectedViewContainer>
+        <>
           {/* 선택된 지역에 대한 정보를 렌더링 */}
           <RegionInfoWrap>
             <RegionInfoItem>
@@ -69,7 +69,7 @@ const RegionFinder = ({ toggleFavorite, favorites }) => {
             </RegionInfoItem>
             
           </RegionInfoWrap>
-        </SelectedViewContainer>
+        </>
       )}
     </RegionFinderContainer>
   )
