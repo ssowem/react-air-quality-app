@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Routes  } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './components/Home';
 import Favorites from './components/Favorites';
@@ -36,15 +36,17 @@ function App() {
 
   return (
     <div className="app-container">
-      <Router>
-        <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/regions" element={<RegionFinder toggleFavorite={toggleFavorite} favorites={favorites} />} />
-          <Route path="/favorites" element={<Favorites toggleFavorite={toggleFavorite} favorites={favorites} clearFavorites={clearFavorites} />}  />
-        </Routes>
-        </Layout>
-      </Router>
+
+        <Router>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/regions" element={<RegionFinder toggleFavorite={toggleFavorite} favorites={favorites} />} />
+              <Route path="/favorites" element={<Favorites toggleFavorite={toggleFavorite} favorites={favorites} clearFavorites={clearFavorites} />} />
+            </Routes>
+          </Layout>
+        </Router>
+      </BrowserRouter>
     </div>
   );
 }
