@@ -36,7 +36,6 @@ function App() {
 
   return (
     <div className="app-container">
-
         <Router>
           <Layout>
             <Routes>
@@ -46,7 +45,6 @@ function App() {
             </Routes>
           </Layout>
         </Router>
-      </BrowserRouter>
     </div>
   );
 }
