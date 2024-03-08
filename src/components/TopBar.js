@@ -37,7 +37,7 @@ const TopBar = () => {
       ) : (
         <span>내 지역을 선택해주세요.</span>
       )}
-      {/* 버튼 위치 변경 */}
+      {/* 버튼 위치 변경하기 */}
       <TopBarBtn onRegionSelectClick={toggleRegionSelect} isSelected={!!selectedRegion} />
       {isRegionSelectVisible && (
         <MyRegionSelect onClose={toggleRegionSelect} onRegionSelected={handleRegionSelected} />

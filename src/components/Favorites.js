@@ -78,8 +78,8 @@ const Favorites = ({ favorites, clearFavorites, toggleFavorite }) => {
           </RegionInfoList>
           {isClearAllVisible && (
             <ClearAllModal
-              onClose={closeClearAllModal} // Pass function to close the modal
-              clearFavorites={handleClearFavorites} // Pass the clearFavorites function
+              onClose={closeClearAllModal}
+              clearFavorites={handleClearFavorites}
             />
           )}
         </FavoritesContainer>
@@ -148,10 +148,14 @@ const RegionInfoItem = styled.div`
   padding: 40px;
   gap: 20px;
 
+  @media (max-width: 375px) {
+    padding: 20px;
+  }
+
   .Region {
     display: flex;
     justify-content: space-between;
-    font-size: 30px;
+    font-size: 12px;
 
     .left {
       .row {
@@ -167,6 +171,10 @@ const RegionInfoItem = styled.div`
 
       span {
         font-size: 40px;
+
+        @media (max-width: 375px) {
+          font-size: 30px;
+        }
       }
     }
   }
@@ -175,6 +183,10 @@ const RegionInfoItem = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media (max-width: 375px) {
+      font-size: 10px;
+    }
 
     .row {
       display: flex;

@@ -29,7 +29,7 @@ const RegionFinder = ({ toggleFavorite, favorites }) => {
 
       {currentRegion && (
         <SelectedViewContainer>
-          {/* 선택된 지역에 대한 정보를 여기에 렌더링 */}
+          {/* 선택된 지역에 대한 정보를 렌더링 */}
           <RegionInfoWrap>
             <RegionInfoItem>
               <div className='Region'>
@@ -92,17 +92,12 @@ const RegionFinderContainer = styled.div`
     margin-bottom: 10px;
   
 `
-
-const SelectedViewContainer = styled.div`
-`
-
 const RegionInfoWrap = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   width: 100%;
   gap: 10px;
 `
-
 const RegionInfoItem = styled.div`
   background-color: #f1f1f1;
   display: flex;
@@ -111,10 +106,18 @@ const RegionInfoItem = styled.div`
   padding: 40px;
   gap: 20px;
 
+  @media (max-width: 375px) {
+    padding: 20px;
+  }
+
   .Region {
     display: flex;
     justify-content: space-between;
     font-size: 30px;
+
+    @media (max-width: 375px) {
+      font-size: 14px;
+    }
 
     .left {
       .row {
@@ -130,6 +133,10 @@ const RegionInfoItem = styled.div`
 
       span {
         font-size: 40px;
+
+        @media (max-width: 375px) {
+          font-size: 30px;
+        }
       }
     }
   }
@@ -138,6 +145,10 @@ const RegionInfoItem = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media (max-width: 375px) {
+      font-size: 10px;
+    }
 
     .row {
       display: flex;

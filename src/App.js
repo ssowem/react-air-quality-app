@@ -20,11 +20,6 @@ function App() {
         return [...fav, region];
       }
     });
-    // setFavorites((currentFavorites) =>
-    //   currentFavorites.includes(region)
-    //     ? currentFavorites.filter((fav) => fav !== region)
-    //     : [...currentFavorites, region]
-    // );
   };
 
 
@@ -35,9 +30,7 @@ function App() {
 
 
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
     <div className="app-container">
-        <Router>
           <Layout>
             <Routes>
               <Route path="/" element={<Home />} />
@@ -45,9 +38,7 @@ function App() {
               <Route path="/favorites" element={<Favorites toggleFavorite={toggleFavorite} favorites={favorites} clearFavorites={clearFavorites} />} />
             </Routes>
           </Layout>
-        </Router>
     </div>
-    </BrowserRouter>
   );
 }
 

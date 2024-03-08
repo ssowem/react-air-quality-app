@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components';
 
 const Home = () => {
-  console.log("Home 컴포넌트 렌더링");
   return (
     <>
       <BoxItemContainer>
@@ -216,10 +215,15 @@ display: grid;
 grid-template-columns: repeat(5, 1fr);
 justify-content: center;
 gap: 10px;
+
+@media (max-width: 375px) {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 `
 
 const BoxItem = styled.div`
-width: 134px;
+width: 100%;
 height: 134px;
 background-color: #48D3FF;
 border-radius: 8px;
@@ -233,14 +237,24 @@ padding: 18px;
     display: flex;
     justify-content: space-between;
     font-size: 20px;
+
+    @media (max-width: 375px) {
+      font-size: 12px;
+    }
   }
 
   .bottom-icon {
-    // display: flex;
-    // justify-content: flex-end;
     text-align: right;
     span {
       font-size: 50px;
+      @media (max-width: 375px) {
+        font-size: 40px;
+
+      }
     }
+  }
+
+  @media (max-width: 375px) {
+    height: 114px;
   }
 `

@@ -54,4 +54,16 @@ const Button = styled.button`
   box-shadow: 2px 4px 5px 2px rgba(155,155,155,0.5);
   background-color: ${props => props.$active ? '#313131' : '#fff'};
   color: ${props => props.$active ? '#fff' : '#000'};
+
+  @media (max-width: 375px) {
+    font-size: 12px;
+  }
+
+  span {
+    font-size: 20px;
+
+    @media (max-width: 375px) {
+      font-size: 16px;
+    }
+  }
 `

@@ -31,6 +31,11 @@ display: flex;
 justify-content: center;
 align-items: center;
 gap: 14px;
+
+@media (max-width: 375px) {
+  gap: 10px;
+}
+
 `
 
 const Item = styled.li`
@@ -51,7 +56,16 @@ const Item = styled.li`
     &.lv3 {
       background-color: #CB2E41;
     }
+
+    @media (max-width: 375px) {
+      width: 20px;
+    }
   }
+
+  span {
+    font-size: 14px;
+  }
+ 
 `
 
 
