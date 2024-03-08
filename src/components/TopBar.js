@@ -8,6 +8,7 @@ const TopBar = () => {
   const [selectedRegion, setSelectedRegion] = useState("");//선택된 지역상태
 
   const toggleRegionSelect = () => {
+    // true이면 false로, false이면 true로 변경시킴
     setIsRegionSelectVisible(!isRegionSelectVisible);
   };
 
@@ -45,7 +46,6 @@ const TopBar = () => {
   )
 }
 
-//  ${props => props.isSelected ? '#000;' : '#333'}
 
 export default TopBar;
 const TopBarContainer = styled.div`

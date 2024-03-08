@@ -27,6 +27,7 @@ function App() {
     // );
   };
 
+
   const clearFavorites = () => {
     // 즐겨찾기 초기화하기
     setFavorites([]);
