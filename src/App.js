@@ -35,6 +35,7 @@ function App() {
 
 
   return (
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
     <div className="app-container">
         <Router>
           <Layout>
@@ -46,6 +47,7 @@ function App() {
           </Layout>
         </Router>
     </div>
+    </BrowserRouter>
   );
 }
 
